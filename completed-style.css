@@ -1,0 +1,154 @@
+/* ===== Base styles (already done) ===== */
+body {
+  font-family: sans-serif;
+  padding: 40px;
+  background: #f4f4f4;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+/* ================================================
+   PART 1: TRANSITIONS
+   A transition needs a trigger: state A -> state B
+   ================================================ */
+
+/* Step 1: Change color on hover, then make it smooth */
+.step1 {
+  transition: background-color 0.3s;
+}
+
+.step1:hover {
+  background-color: tomato;
+}
+
+/* Step 2: Animate more than one property */
+.step2 {
+  transition: all 0.3s;
+}
+
+.step2:hover {
+  transform: scale(1.2);
+  border-radius: 50%;
+}
+
+/* Step 3: Timing functions (ease, linear, ease-in-out) */
+.step3a { transition: transform 1s ease; }
+.step3b { transition: transform 1s linear; }
+.step3c { transition: transform 1s ease-in-out; }
+
+.step3a:hover,
+.step3b:hover,
+.step3c:hover {
+  transform: translateY(80px);
+}
+
+/* Step 4: Delay */
+.step4 {
+  transition: background-color 0.3s;
+  transition-delay: 0.5s;
+}
+
+.step4:hover {
+  background-color: seagreen;
+}
+
+
+/* ================================================
+   PART 2: TRANSFORMS
+   Animate transform + opacity: they stay smooth
+   ================================================ */
+
+/* Step 5: translate, rotate, scale */
+.step5a,
+.step5b,
+.step5c {
+  transition: transform 0.3s;
+}
+
+.step5a:hover { transform: translateX(20px); }
+.step5b:hover { transform: rotate(45deg); }
+.step5c:hover { transform: scale(1.3); }
+
+/* Step 6: Combine them: the "lift" card */
+.step6 {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step6:hover {
+  transform: translateY(-10px) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ================================================
+   PART 3: KEYFRAMES
+   Keyframes run on their own, no trigger needed
+   ================================================ */
+
+/* Step 7: First @keyframes: fade in (from / to) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.step7 {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+/* Step 8: Percent steps: bounce (0%, 50%, 100%) */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-40px); }
+  100% { transform: translateY(0); }
+}
+
+.step8 {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+/* Step 9: animation properties: infinite + alternate */
+@keyframes pulse {
+  from { transform: scale(1); }
+  to   { transform: scale(1.2); }
+}
+
+.step9 {
+  animation-name: pulse;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Step 10: The shorthand */
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(10deg); }
+  75%  { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.step10 {
+  /* name | duration | timing | iteration-count */
+  animation: wiggle 0.5s ease-in-out infinite;
+}

@@ -1,0 +1,73 @@
+/* ===== Base styles (already done) ===== */
+body {
+  font-family: sans-serif;
+  padding: 40px;
+  background: #f4f4f4;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+/* ================================================
+   PART 1: TRANSITIONS
+   A transition needs a trigger: state A -> state B
+   ================================================ */
+
+/* Step 1: Change color on hover, then make it smooth */
+
+
+/* Step 2: Animate more than one property */
+
+
+/* Step 3: Timing functions (ease, linear, ease-in-out) */
+
+
+/* Step 4: Delay */
+
+
+
+/* ================================================
+   PART 2: TRANSFORMS
+   Animate transform + opacity: they stay smooth
+   ================================================ */
+
+/* Step 5: translate, rotate, scale */
+
+
+/* Step 6: Combine them: the "lift" card */
+
+
+
+/* ================================================
+   PART 3: KEYFRAMES
+   Keyframes run on their own, no trigger needed
+   ================================================ */
+
+/* Step 7: First @keyframes: fade in (from / to) */
+
+
+/* Step 8: Percent steps: bounce (0%, 50%, 100%) */
+
+
+/* Step 9: animation properties: infinite + alternate */
+
+
+/* Step 10: The shorthand */
+
